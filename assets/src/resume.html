@@ -9,7 +9,10 @@
   @page { size: Letter; margin: 0.55in 0.6in; }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 9.6pt; line-height: 1.38; color: #1c1a24; }
-  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5px solid #7c3aed; padding-bottom: 8px; margin-bottom: 10px; }
+  header { display: flex; align-items: center; gap: 14px; border-bottom: 2.5px solid #7c3aed; padding-bottom: 8px; margin-bottom: 10px; }
+  .photo { width: 0.85in; height: 0.85in; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid #ede4ff; }
+  .name-block { flex: 1; }
+  .contact { margin-left: auto; }
   h1 { font-family: Georgia, serif; font-size: 25pt; margin: 0; letter-spacing: -.01em; }
   .title { color: #7c3aed; font-weight: 600; margin: 2px 0 0; }
   .contact { text-align: right; font-size: 8.8pt; color: #444; line-height: 1.5; }
@@ -31,7 +34,8 @@
 </head>
 <body>
 <header>
-  <div>
+  <img class="photo" src="../profile.png" alt="Alice Millage">
+  <div class="name-block">
     <h1>Alice Millage</h1>
     <p class="title">Founder · WordPress &amp; JavaScript Web Developer · U.S. Air Force Veteran</p>
   </div>
@@ -128,7 +132,7 @@
   <div class="skills">
     <h2>Skills</h2>
     <p><b>Web:</b> WordPress, SureCart, SureRank, React, Angular, TypeScript, JavaScript, HTML, CSS</p>
-    <p><b>Back end &amp; data:</b> Node.js, Express, Supabase, PostgreSQL, MongoDB, REST APIs</p>
+    <p><b>Back end &amp; data:</b> Node.js, Python, Express, Supabase, PostgreSQL, MongoDB, REST APIs</p>
     <p><b>Cloud &amp; quality:</b> Vercel, AWS, GitHub Actions, Playwright, Jest, Postman, WCAG 2.2 AA</p>
     <p><b>AI:</b> Claude Code, Claude API, AI automations</p>
     <p><b>Business:</b> Risk Management, Bloomberg Terminal, derivatives operations, Excel reporting</p>
