@@ -258,7 +258,7 @@
     const data = new FormData(form);
     const subject = 'Portfolio inquiry from ' + data.get('name');
     const body = data.get('message') + '\n\n— ' + data.get('name') + ' (' + data.get('email') + ')';
-    window.location.href = 'mailto:linkedin@zuleikallc.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:alice.millage@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     note.textContent = 'Opening your email app…';
   });
 
