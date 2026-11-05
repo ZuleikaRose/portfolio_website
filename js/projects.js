@@ -40,7 +40,7 @@
     },
     {
       repo: 'netflix_clone',
-      title: 'Netflix Clone',
+      title: 'NetBox',
       tagline: 'A mobile-first streaming app with real TMDB titles',
       description:
         'A streaming app built with React 19, Vite 8 and React Router 7 on Supabase. Real trending and searchable titles from TMDB, profiles with PINs, watch parties over Supabase Realtime, an AI “what should I watch” picker powered by Claude, Stripe donations, a full Spanish translation, and Playwright end-to-end plus WCAG 2.2 AA tests on every user journey.',

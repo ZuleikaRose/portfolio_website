@@ -182,7 +182,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 }
 .project-cover.c0 { background: linear-gradient(135deg, #7c3aed, #f472b6); }
 .project-cover.c1 { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
-.project-cover.c2 { background: linear-gradient(135deg, #111, #e50914); }
+.project-cover.c2 { background: linear-gradient(135deg, #2e1065, #7c3aed); }
 .project-cover.c3 { background: linear-gradient(135deg, #232f3e, #ff9900); }
 .project-cover.c4 { background: linear-gradient(135deg, #059669, #0ea5e9); }
 .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
