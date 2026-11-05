@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Alice Millage portfolio website (static HTML/CSS/JS)",
+  "scripts": {
+    "start": "npx --yes serve -l 5500 .",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
