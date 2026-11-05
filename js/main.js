@@ -85,8 +85,13 @@
         desc,
         el('ul', { class: 'project-highlights' }, p.highlights.map((h) => el('li', { text: h }))),
         el('ul', { class: 'tags', 'aria-label': 'Technologies' }, p.tags.map((t) => el('li', { text: t }))),
+        p.liveNote && el('p', { class: 'live-note', text: p.liveNote }),
         el('div', { class: 'project-links' }, [
-          p.live && el('a', { href: p.live, target: '_blank', rel: 'noopener', text: 'Live site ↗' }),
+          p.live && el('a', {
+            href: p.live, target: '_blank', rel: 'noopener',
+            text: p.liveNote ? 'Live demo (under review) ↗' : 'Live site ↗',
+            title: p.liveNote || null
+          }),
           el('a', { href: P.repoUrl(p), target: '_blank', rel: 'noopener', text: 'Code ↗' }),
           more,
           el('span', { class: 'repo-stats', 'data-repo': p.repo })

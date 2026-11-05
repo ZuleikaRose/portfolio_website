@@ -1,0 +1,6 @@
+# Keep tooling and sources out of the published site
+.github
+tests
+scripts
+assets/src
+.cto-toolkit

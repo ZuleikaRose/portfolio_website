@@ -109,10 +109,14 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 
 /* ===== Hero ===== */
 .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; padding: 96px 0 48px; }
+/* Let grid columns shrink below their content (the code window's long lines), so phones never scroll sideways */
+.hero > * { min-width: 0; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin: 0 0 12px; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); }
 .gradient { background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { font-size: 1.15rem; color: var(--muted); max-width: 56ch; }
+/* One fixed line, so the rotating phrase never reflows the hero (no layout shift) */
+.typed-line { margin: 0 0 6px; font-size: clamp(1.15rem, 3.4vw, 1.5rem); color: var(--muted); white-space: nowrap; overflow: hidden; height: 1.6em; line-height: 1.6em; }
 .typed { color: var(--text); font-weight: 600; }
 .caret { display: inline-block; width: 2px; height: 1.1em; background: var(--accent); vertical-align: -0.15em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -153,6 +157,15 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .about-text p { color: var(--muted); }
 .about-text strong { color: var(--text); }
 .about-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.portrait { margin: 0 0 20px; }
+.portrait img, .portrait-monogram {
+  display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  border: 4px solid var(--surface); box-shadow: var(--shadow);
+}
+.portrait-monogram {
+  background: linear-gradient(135deg, #7c3aed, #db2777); color: #fff;
+  font-family: var(--font-display); font-size: 2.6rem; font-weight: 700;
+}
 .about-card h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
 .now-list { list-style: none; padding: 0; margin: 0 0 24px; }
 .now-list li { padding: 8px 0; border-bottom: 1px dashed var(--border); }
@@ -195,6 +208,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .project-highlights { margin: 0 0 14px; padding-left: 18px; font-size: 0.88rem; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: auto 0 16px; }
 .tags li { font-size: 0.75rem; padding: 3px 9px; border-radius: 6px; background: var(--bg-alt); color: var(--muted); border: 1px solid var(--border); }
+.live-note { margin: 0 0 10px; font-size: 0.78rem; color: var(--muted); font-style: italic; }
 .project-links { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-weight: 600; font-size: 0.9rem; }
 .link-btn { background: none; border: 0; color: var(--muted); font: inherit; font-weight: 600; cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
 .repo-stats { margin-left: auto; font-size: 0.78rem; color: var(--muted); font-weight: 500; }
@@ -249,7 +263,8 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; padding-top: 56px; }
-  .hero-card { order: -1; max-width: 460px; }
+  .hero-card { order: -1; max-width: 460px; width: 100%; }
+  .code-window { transform: none; }
   .about-grid, .contact-card { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
 }

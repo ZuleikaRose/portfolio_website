@@ -52,6 +52,8 @@
       tags: ['React', 'Vite', 'Supabase', 'Stripe', 'Playwright', 'Claude API'],
       category: 'fullstack',
       live: 'https://front-end-sepia-rho.vercel.app/',
+      // Remove once Google's Safe Browsing review of the old "Netflix Clone" branding clears.
+      liveNote: 'Under Google review: Chrome may show a warning until it clears.',
       year: 2026,
       featured: true
     },

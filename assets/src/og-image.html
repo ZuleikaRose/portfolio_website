@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Source for assets/og-image.png (1200x630 social sharing card). Re-render with scripts/render-assets.mjs. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; }
+  body {
+    position: relative; overflow: hidden; box-sizing: border-box; padding: 80px 90px;
+    background: #0f0d16; color: #ece9f5; font-family: Inter, sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .glow { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; }
+  .g1 { width: 520px; height: 520px; background: #7c3aed; right: -120px; top: -160px; }
+  .g2 { width: 420px; height: 420px; background: #db2777; right: 160px; bottom: -260px; opacity: .4; }
+  .mark {
+    position: absolute; right: 90px; top: 80px; width: 120px; height: 120px; border-radius: 30px;
+    background: linear-gradient(135deg, #7c3aed, #db2777); display: grid; place-items: center;
+    font: 700 52px Fraunces, serif; color: #fff;
+  }
+  .eyebrow { font-weight: 600; font-size: 24px; letter-spacing: .14em; text-transform: uppercase; color: #a78bfa; margin: 0 0 18px; position: relative; }
+  h1 { font: 700 96px/1.02 Fraunces, serif; margin: 0 0 22px; position: relative; }
+  h1 span { background: linear-gradient(135deg, #a78bfa, #f472b6); -webkit-background-clip: text; color: transparent; }
+  .sub { font-size: 32px; color: #c9c4d9; margin: 0 0 40px; max-width: 900px; position: relative; }
+  .url { font-weight: 600; font-size: 28px; color: #fff; position: relative; }
+  .url b { color: #f472b6; }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="mark">AM</div>
+  <p class="eyebrow">Air Force Veteran · Founder · Web Developer</p>
+  <h1><span>Alice Millage</span></h1>
+  <p class="sub">Owner of LiteraryWorm &amp; Zuleika LLC — websites, web apps and AI-powered automations.</p>
+  <p class="url">alicemillage<b>.cv</b></p>
+</body>
+</html>

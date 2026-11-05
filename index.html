@@ -5,14 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alice Millage · Web Developer</title>
   <meta name="description" content="Alice Millage — Air Force veteran, WordPress and JavaScript web developer, Owner of LiteraryWorm and Zuleika LLC. Portfolio of full-stack React, Supabase and MEAN projects.">
+  <link rel="canonical" href="https://www.alicemillage.cv/">
   <meta property="og:title" content="Alice Millage · Web Developer">
   <meta property="og:description" content="Air Force veteran and founder building high-performing websites, apps and AI-powered automations.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.alicemillage.cv/">
+  <meta property="og:site_name" content="Alice Millage">
+  <meta property="og:image" content="https://www.alicemillage.cv/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Alice Millage — Air Force veteran, founder and web developer. alicemillage.cv">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alice Millage · Web Developer">
+  <meta name="twitter:description" content="Air Force veteran and founder building high-performing websites, apps and AI-powered automations.">
+  <meta name="twitter:image" content="https://www.alicemillage.cv/assets/og-image.png">
   <meta name="theme-color" content="#0f172a">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alice Millage",
+    "url": "https://www.alicemillage.cv/",
+    "image": "https://www.alicemillage.cv/assets/og-image.png",
+    "jobTitle": "Owner | WordPress Web Developer",
+    "worksFor": [
+      { "@type": "Organization", "name": "LiteraryWorm", "url": "https://www.literaryworm.com" },
+      { "@type": "Organization", "name": "Zuleika LLC", "url": "https://zuleikallc.com" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US" },
+    "sameAs": [
+      "https://www.linkedin.com/in/alice-millage-002661392/",
+      "https://github.com/ZuleikaRose",
+      "https://zuleikallc.com/blog"
+    ],
+    "knowsAbout": ["WordPress", "React", "TypeScript", "Supabase", "Web accessibility", "AI automation"]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c3aed'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>AM</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <!-- Fonts load without blocking the first paint; the system fallback shows until they arrive -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <script>
     // Apply the saved theme before paint to avoid a flash.
@@ -24,7 +58,7 @@
 
   <header class="site-header" id="top">
     <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Alice Millage, home">AM<span>.</span></a>
+      <a class="brand" href="#top">AM<span aria-hidden="true">.</span><span class="visually-hidden"> Alice Millage, home</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -51,14 +85,17 @@
       <div class="hero-text">
         <p class="eyebrow">Air Force Veteran · Founder · Web Developer</p>
         <h1>Hi, I'm <span class="gradient">Alice Millage</span>.</h1>
+        <p class="typed-line">
+          I build <span class="typed" aria-hidden="true">high-performing websites</span><span class="caret" aria-hidden="true"></span>
+          <span class="visually-hidden">high-performing websites, full-stack web apps, WordPress sites and AI-powered automations.</span>
+        </p>
         <p class="lead">
-          I build <span class="typed" aria-live="polite">high-performing websites</span><span class="caret" aria-hidden="true"></span>
-          for modern businesses. Owner of <a href="https://www.literaryworm.com" target="_blank" rel="noopener">LiteraryWorm</a>
+          For modern businesses, as Owner of <a href="https://www.literaryworm.com" target="_blank" rel="noopener">LiteraryWorm</a>
           and <a href="https://zuleikallc.com" target="_blank" rel="noopener">Zuleika LLC</a>, based in Chicago.
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#projects">View my work</a>
-          <a class="btn btn-ghost" href="#contact">Let's talk</a>
+          <a class="btn btn-ghost" href="assets/Alice-Millage-Resume.pdf" download>Download résumé (PDF)</a>
         </div>
         <ul class="socials" aria-label="Social links">
           <li><a href="https://github.com/ZuleikaRose" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a></li>
@@ -118,6 +155,11 @@
           </div>
         </div>
         <aside class="about-card">
+          <!-- Portrait: to use a photo, save it as assets/profile.jpg (square, 600px+) and replace the span with
+               <img src="assets/profile.jpg" alt="Alice Millage" width="160" height="160"> -->
+          <figure class="portrait">
+            <span class="portrait-monogram" role="img" aria-label="Alice Millage">AM</span>
+          </figure>
           <h3>Currently</h3>
           <ul class="now-list">
             <li><strong>Owner</strong>, LiteraryWorm <small>Oct 2026 – now</small></li>
@@ -174,6 +216,7 @@
             <li><a href="mailto:linkedin@zuleikallc.com">linkedin@zuleikallc.com</a></li>
             <li><a href="https://zuleikallc.com" target="_blank" rel="noopener">zuleikallc.com</a></li>
             <li><a href="https://www.literaryworm.com" target="_blank" rel="noopener">literaryworm.com</a></li>
+            <li><a href="assets/Alice-Millage-Resume.pdf" download>Download my résumé (PDF)</a></li>
           </ul>
         </div>
         <form class="contact-form" id="contact-form" novalidate>
@@ -196,5 +239,15 @@
 
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Vercel Web Analytics (cookieless page views). Only on the live domain, where Vercel serves the script.
+    if (/(^|\.)alicemillage\.cv$/.test(location.hostname)) {
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      const s = document.createElement('script');
+      s.defer = true;
+      s.src = '/_vercel/insights/script.js';
+      document.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>
