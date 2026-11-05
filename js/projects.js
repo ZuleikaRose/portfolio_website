@@ -186,7 +186,7 @@
         'Achieved a 91% Preventive Health Assessment accuracy rate, ranked #1 in Pacific Air Command at Andersen AB, Guam.',
         'Raised PIMIR records capture from failing to 75% at Osan AB, South Korea.',
         'Administered DoD software security upgrades and clinic tech support at Yokota AB, Japan.',
-        'Honorable discharge · Secret clearance · Licensed EMT.'
+        'Honorable discharge · Secret clearance · Former Licensed EMT.'
       ]
     }
   ];
