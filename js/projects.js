@@ -87,7 +87,7 @@
 
   const skills = {
     Frontend: ['React', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'EJS'],
-    'WordPress & Commerce': ['WordPress', 'SureCart', 'Stripe', 'SEO (RankMath)'],
+    'WordPress & Commerce': ['WordPress', 'SureCart', 'SureRank', 'Stripe', 'SEO (RankMath)'],
     Backend: ['Node.js', 'Express', 'Supabase Edge Functions', 'REST APIs'],
     Data: ['PostgreSQL', 'Row Level Security', 'MongoDB', 'Supabase Auth'],
     'Cloud & DevOps': ['Vercel', 'AWS S3 / IAM', 'GitHub Actions', 'Git'],
