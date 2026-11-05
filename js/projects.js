@@ -51,7 +51,7 @@
       ],
       tags: ['React', 'Vite', 'Supabase', 'Stripe', 'Playwright', 'Claude API'],
       category: 'fullstack',
-      live: null,
+      live: 'https://front-end-sepia-rho.vercel.app/',
       year: 2026,
       featured: true
     },
