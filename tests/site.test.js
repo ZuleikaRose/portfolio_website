@@ -48,19 +48,28 @@ describe('SEO files', () => {
 });
 
 describe('education', () => {
-  test('lists Code Platoon and the 120+ undergraduate credits', () => {
-    expect(P.education).toEqual(expect.arrayContaining([
-      expect.stringContaining('Code Platoon'),
-      expect.stringContaining('120+ Credits')
-    ]));
+  test('lists Code Platoon and Post University with their details', () => {
+    const cp = P.education.find((e) => e.school === 'Code Platoon');
+    expect(cp).toMatchObject({ program: 'AI Full-Stack Software Engineer', year: 2027 });
+    expect(cp.details.join(' ')).toMatch(/Python, Django, React and PostgreSQL/);
+    expect(cp.details).toContain('Project: LiteraryWorm');
+    const post = P.education.find((e) => e.school === 'Post University');
+    expect(post).toMatchObject({ program: 'Computer and Information Science, General', year: 2024 });
+    expect(post.details).toContain('128+ credits');
     expect(html).toContain('id="edu-list"');
   });
 
-  test('the résumé source has an Education section and no photo', () => {
+  test('LiteraryWorm is listed as a project', () => {
+    expect(P.projects.some((p) => p.title === 'LiteraryWorm')).toBe(true);
+  });
+
+  test('the résumé source has the Education entries and no photo', () => {
     const resume = read('assets/src/resume.html');
     expect(resume).toContain('<h2>Education</h2>');
-    expect(resume).toContain('Code Platoon');
-    expect(resume).toContain('120+ Credits');
+    expect(resume).toContain('Post University');
+    expect(resume).toContain('128+ credits');
+    expect(resume).toContain('AI Full-Stack Software Engineer');
     expect(resume).not.toMatch(/<img\b/);
+    expect(resume).not.toContain('120+');
   });
 });

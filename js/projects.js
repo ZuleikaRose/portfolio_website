@@ -198,8 +198,18 @@
   ];
 
   const education = [
-    'Code Platoon · Professional Development',
-    'Undergraduate Coursework · 120+ Credits'
+    {
+      school: 'Code Platoon',
+      program: 'AI Full-Stack Software Engineer',
+      year: 2027,
+      details: ['Learned Python, Django, React and PostgreSQL', 'Project: LiteraryWorm']
+    },
+    {
+      school: 'Post University',
+      program: 'Computer and Information Science, General',
+      year: 2024,
+      details: ['128+ credits']
+    }
   ];
 
   const brands = [

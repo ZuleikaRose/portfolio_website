@@ -54,7 +54,15 @@
       ])
     );
   });
-  P.education.forEach((e) => $('#edu-list').append(el('li', { text: e })));
+  P.education.forEach((e) => $('#edu-list').append(
+    el('li', {}, [
+      el('div', {}, [
+        el('strong', { text: e.school + ' · ' + e.year }),
+        el('span', { class: 'edu-program', text: e.program }),
+        ...e.details.map((d) => el('span', { class: 'edu-detail', text: d }))
+      ])
+    ])
+  ));
   P.certifications.forEach((c) => $('#cert-list').append(el('li', { text: c })));
 
   /* ---------- Projects ---------- */

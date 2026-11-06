@@ -238,7 +238,11 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .cert-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; list-style: none; padding: 0; }
 .cert-list li { display: flex; gap: 10px; align-items: center; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; font-weight: 500; font-size: 0.92rem; }
 .cert-list li::before { content: '🏅'; }
+.edu-list li { align-items: flex-start; }
 .edu-list li::before { content: '🎓'; }
+.edu-list strong, .edu-list span { display: block; }
+.edu-program { margin-top: 2px; }
+.edu-detail { color: var(--muted); font-weight: 400; font-size: 0.86rem; }
 
 /* ===== Contact ===== */
 .contact-card {
