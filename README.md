@@ -41,7 +41,5 @@ Keep the résumé in step with `js/projects.js`, and update `<lastmod>` in `site
 
 - **Analytics:** Vercel Web Analytics (cookieless) is enabled for the project; the page loads its script only on
   `alicemillage.cv`. View it in the Vercel dashboard → portfolio-website → Analytics.
-- **NetBox link:** `liveNote` in `js/projects.js` marks the NetBox demo as under Google Safe Browsing review. Remove
-  it once the review clears.
 - **Photo:** `assets/profile.png` (360×360, cropped from the full headshot) is shown in the About card; the "AM"
   monogram style (`.portrait-monogram`) remains as a fallback.
