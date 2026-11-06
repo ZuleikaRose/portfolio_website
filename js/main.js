@@ -57,7 +57,8 @@
   P.education.forEach((e) => $('#edu-list').append(
     el('li', {}, [
       el('div', {}, [
-        el('strong', { text: e.school + ' · ' + e.year }),
+        el('strong', { text: e.school }),
+        el('span', { class: 'edu-detail', text: e.dates }),
         el('span', { class: 'edu-program', text: e.program }),
         ...e.details.map((d) => el('span', { class: 'edu-detail', text: d }))
       ])

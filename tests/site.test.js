@@ -50,11 +50,11 @@ describe('SEO files', () => {
 describe('education', () => {
   test('lists Code Platoon and Post University with their details', () => {
     const cp = P.education.find((e) => e.school === 'Code Platoon');
-    expect(cp).toMatchObject({ program: 'AI Full-Stack Software Engineer', year: 2027 });
+    expect(cp).toMatchObject({ program: 'AI Full-Stack Software Engineer', dates: 'Oct 2026 – Jan 2027' });
     expect(cp.details.join(' ')).toMatch(/Python, Django, React and PostgreSQL/);
     expect(cp.details).toContain('Project: LiteraryWorm');
     const post = P.education.find((e) => e.school === 'Post University');
-    expect(post).toMatchObject({ program: 'Computer and Information Science, General', year: 2024 });
+    expect(post).toMatchObject({ program: 'Computer and Information Science, General', dates: '2024' });
     expect(post.details).toContain('128+ credits');
     expect(html).toContain('id="edu-list"');
   });
@@ -74,6 +74,7 @@ describe('education', () => {
     expect(resume).toContain('Post University');
     expect(resume).toContain('128+ credits');
     expect(resume).toContain('AI Full-Stack Software Engineer');
+    expect(resume).toContain('Oct 2026 – Jan 2027');
     expect(resume).not.toMatch(/<img\b/);
     expect(resume).not.toContain('120+');
   });
