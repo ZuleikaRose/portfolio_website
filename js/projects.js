@@ -197,6 +197,11 @@
     'AI Capabilities and Limitations'
   ];
 
+  const education = [
+    'Code Platoon · Professional Development',
+    'Undergraduate Coursework · 120+ Credits'
+  ];
+
   const brands = [
     '1Password', 'RankMath', 'Termly', 'WPDeveloper', 'Cuppa AI', 'Brainstorm Force',
     'SEOscribed', 'Element UI', 'Codecademy', 'BNY', '1forone'
@@ -237,6 +242,7 @@
     skills: skills,
     experience: experience,
     certifications: certifications,
+    education: education,
     brands: brands,
     repoUrl: repoUrl,
     filterProjects: filterProjects,

@@ -43,7 +43,7 @@
   $$('a', navLinks).forEach((a) => a.addEventListener('click', () => setNav(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
 
-  /* ---------- Brands, skills, certifications ---------- */
+  /* ---------- Brands, skills, education, certifications ---------- */
   P.brands.forEach((b) => $('#brand-list').append(el('li', { text: b })));
 
   Object.entries(P.skills).forEach(([group, items]) => {
@@ -54,6 +54,7 @@
       ])
     );
   });
+  P.education.forEach((e) => $('#edu-list').append(el('li', { text: e })));
   P.certifications.forEach((c) => $('#cert-list').append(el('li', { text: c })));
 
   /* ---------- Projects ---------- */

@@ -46,3 +46,21 @@ describe('SEO files', () => {
     expect(read('404.html')).toContain('Page not found');
   });
 });
+
+describe('education', () => {
+  test('lists Code Platoon and the 120+ undergraduate credits', () => {
+    expect(P.education).toEqual(expect.arrayContaining([
+      expect.stringContaining('Code Platoon'),
+      expect.stringContaining('120+ Credits')
+    ]));
+    expect(html).toContain('id="edu-list"');
+  });
+
+  test('the résumé source has an Education section and no photo', () => {
+    const resume = read('assets/src/resume.html');
+    expect(resume).toContain('<h2>Education</h2>');
+    expect(resume).toContain('Code Platoon');
+    expect(resume).toContain('120+ Credits');
+    expect(resume).not.toMatch(/<img\b/);
+  });
+});
