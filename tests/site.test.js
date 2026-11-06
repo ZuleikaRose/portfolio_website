@@ -59,6 +59,11 @@ describe('education', () => {
     expect(html).toContain('id="edu-list"');
   });
 
+  test('Django is listed under Backend skills on the site and résumé', () => {
+    expect(P.skills.Backend).toContain('Django');
+    expect(read('assets/src/resume.html')).toMatch(/Back end &amp; data:<\/b>[^<]*Django/);
+  });
+
   test('LiteraryWorm is listed as a project', () => {
     expect(P.projects.some((p) => p.title === 'LiteraryWorm')).toBe(true);
   });
