@@ -32,7 +32,7 @@
         'Bottom nav on phones, sidebar on desktop',
         'Hardened Vercel headers and service worker'
       ],
-      tags: ['React', 'JavaScript', 'Supabase', 'PostgreSQL', 'Vercel'],
+      tags: ['React', 'JavaScript', 'Python', 'Supabase', 'PostgreSQL', 'Vercel'],
       category: 'fullstack',
       live: 'https://cpa-black.vercel.app',
       year: 2026,

@@ -77,6 +77,11 @@ describe('education', () => {
     expect(ld.knowsAbout).toContain('Python');
   });
 
+  test('CPA: Crypto Portfolio App lists Python on the site and résumé', () => {
+    expect(P.projects.find((p) => p.title === 'CPA: Crypto Portfolio App').tags).toContain('Python');
+    expect(read('assets/src/resume.html')).toMatch(/CPA: Crypto Portfolio App<\/b>[^<]*Python/);
+  });
+
   test('LiteraryWorm is listed as a project', () => {
     expect(P.projects.some((p) => p.title === 'LiteraryWorm')).toBe(true);
   });
