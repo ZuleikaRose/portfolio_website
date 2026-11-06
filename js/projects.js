@@ -202,11 +202,11 @@
       school: 'Code Platoon',
       program: 'AI Full-Stack Software Engineer',
       dates: 'Oct 2026 – Jan 2027',
-      details: ['Learned Python, Django, React and PostgreSQL', 'Project: LiteraryWorm']
+      details: ['Python, Django, React, PostgreSQL, Supabase', 'Project: LiteraryWorm']
     },
     {
       school: 'Post University',
-      program: 'Computer and Information Science, General',
+      program: 'Computer and Information Sciences, General',
       dates: '2024',
       details: ['128+ credits']
     }
