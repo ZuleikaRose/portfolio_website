@@ -71,6 +71,12 @@ describe('education', () => {
     expect(ld.knowsAbout).toContain('Docker');
   });
 
+  test('Python is in the résumé and the JSON-LD knowsAbout', () => {
+    expect(read('assets/src/resume.html')).toMatch(/Back end &amp; data:<\/b>[^<]*Python/);
+    const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    expect(ld.knowsAbout).toContain('Python');
+  });
+
   test('LiteraryWorm is listed as a project', () => {
     expect(P.projects.some((p) => p.title === 'LiteraryWorm')).toBe(true);
   });
