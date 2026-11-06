@@ -64,6 +64,13 @@ describe('education', () => {
     expect(read('assets/src/resume.html')).toMatch(/Back end &amp; data:<\/b>[^<]*Django/);
   });
 
+  test('Docker is listed in skills, the résumé and the JSON-LD knowsAbout', () => {
+    expect(P.skills['Cloud & DevOps']).toContain('Docker');
+    expect(read('assets/src/resume.html')).toMatch(/Cloud &amp; quality:<\/b>[^<]*Docker/);
+    const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    expect(ld.knowsAbout).toContain('Docker');
+  });
+
   test('LiteraryWorm is listed as a project', () => {
     expect(P.projects.some((p) => p.title === 'LiteraryWorm')).toBe(true);
   });
