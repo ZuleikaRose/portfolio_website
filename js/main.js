@@ -161,7 +161,7 @@
 
   /* ---------- Experience timeline ---------- */
   const timeline = $('#timeline');
-  const VISIBLE = 4;
+  const VISIBLE = 5;
   P.experience.forEach((job, idx) => {
     const org = job.url
       ? el('a', { href: job.url, target: '_blank', rel: 'noopener', text: job.org })
