@@ -80,6 +80,11 @@ describe('education', () => {
     expect(resume).toContain('<li><b>LiteraryWorm AI</b> — Supabase, Node, Claude API, OpenAI</li>');
   });
 
+  test('the résumé contact line links literaryworm.net', () => {
+    const contact = read('assets/src/resume.html').match(/<div class="contact">([\s\S]*?)<\/div>/)[1];
+    expect(contact).toContain('<a href="https://literaryworm.net">literaryworm.net</a>');
+  });
+
   test('Django is listed under Backend skills on the site and résumé', () => {
     expect(P.skills.Backend).toContain('Django');
     expect(read('assets/src/resume.html')).toMatch(/Back end &amp; data:<\/b>[^<]*Django/);
