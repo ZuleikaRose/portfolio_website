@@ -19,7 +19,27 @@
       category: 'fullstack',
       live: 'https://www.literaryworm.com',
       year: 2026,
-      featured: true
+      featured: true,
+      cover: 0
+    },
+    {
+      repo: 'literarywormai',
+      title: 'LiteraryWorm AI',
+      tagline: 'An AI publishing dashboard that takes an ebook from idea to a live store listing',
+      description:
+        'The plan and early build of the Ebook Command Center: one workspace that takes a book from idea to a published listing on Amazon Kindle (KDP) and Google Play Books, with OpenAI and Claude built in through a single AI gateway with cost estimates, budget caps and fallback between the two. It maps 16 author personas and 1,023 user stories with Given/When/Then acceptance criteria across 17 build phases, and a Node build script generates the outline, traceability and feature index, which Jest tests keep consistent.',
+      highlights: [
+        '1,023 user stories with acceptance criteria',
+        'One AI gateway for OpenAI and Claude',
+        'Generated docs kept consistent by Jest'
+      ],
+      tags: ['Supabase', 'PostgreSQL', 'Node', 'Jest', 'Claude API', 'OpenAI'],
+      category: 'fullstack',
+      live: 'https://literarywormai.vercel.app/',
+      private: true,
+      year: 2026,
+      featured: true,
+      cover: 5
     },
     {
       repo: 'cryptocurrency_portfolio_app',
@@ -36,7 +56,8 @@
       category: 'fullstack',
       live: 'https://cpa-black.vercel.app',
       year: 2026,
-      featured: true
+      featured: true,
+      cover: 1
     },
     {
       repo: 'netflix_clone',
@@ -53,7 +74,8 @@
       category: 'fullstack',
       live: 'https://front-end-sepia-rho.vercel.app/',
       year: 2026,
-      featured: true
+      featured: true,
+      cover: 2
     },
     {
       repo: 'angularzuleikav1',
@@ -66,7 +88,8 @@
       category: 'mean',
       live: null,
       year: 2018,
-      featured: false
+      featured: false,
+      cover: 3
     },
     {
       repo: 'codedemyv1',
@@ -79,7 +102,8 @@
       category: 'mean',
       live: null,
       year: 2018,
-      featured: false
+      featured: false,
+      cover: 4
     }
   ];
 

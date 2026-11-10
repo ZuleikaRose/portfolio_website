@@ -73,7 +73,7 @@
   let activeFilter = 'all';
 
   function projectCard(p) {
-    const i = P.projects.indexOf(p);
+    const i = p.cover != null ? p.cover : P.projects.indexOf(p);
     const desc = el('p', { class: 'project-desc', id: 'desc-' + p.repo, text: p.description, hidden: true });
     const more = el('button', { class: 'link-btn', type: 'button', 'aria-expanded': 'false', 'aria-controls': desc.id, text: 'Details' });
     more.addEventListener('click', () => {
@@ -102,9 +102,11 @@
             text: p.liveNote ? 'Live demo (under review) ↗' : 'Live site ↗',
             title: p.liveNote || null
           }),
-          el('a', { href: P.repoUrl(p), target: '_blank', rel: 'noopener', text: 'Code ↗' }),
+          p.private
+            ? el('span', { class: 'code-private', text: 'Code: private', title: 'The source repository is private' })
+            : el('a', { href: P.repoUrl(p), target: '_blank', rel: 'noopener', text: 'Code ↗' }),
           more,
-          el('span', { class: 'repo-stats', 'data-repo': p.repo })
+          !p.private && el('span', { class: 'repo-stats', 'data-repo': p.repo })
         ])
       ])
     ]);
@@ -253,23 +255,56 @@
     progress.style.width = pct + '%';
   }, { passive: true });
 
-  /* ---------- Contact form (opens the visitor's email app; no backend) ---------- */
+  /* ---------- Contact form (Turnstile-protected, posts to /api/contact) ---------- */
+  const TURNSTILE_SITEKEY = '0x4AAAAAAF77LxAQxqzt_S1s';
   const form = $('#contact-form');
   const note = $('#form-note');
-  form.addEventListener('submit', (e) => {
+  const submitBtn = $('button[type="submit"]', form);
+  let turnstileId;
+
+  // Called by the Turnstile script (loaded with render=explicit) once it is ready.
+  window.onContactTurnstileLoad = () => {
+    turnstileId = window.turnstile.render('#contact-turnstile', {
+      sitekey: TURNSTILE_SITEKEY,
+      action: 'contact',
+      theme: 'auto',
+    });
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let ok = true;
     $$('input, textarea', form).forEach((f) => {
+      if (!f.name || f.name.startsWith('cf-')) return;
       const valid = f.checkValidity() && f.value.trim() !== '';
       f.setAttribute('aria-invalid', String(!valid));
       if (!valid) ok = false;
     });
     if (!ok) { note.textContent = 'Please fill in every field with a valid email.'; return; }
+
     const data = new FormData(form);
-    const subject = 'Portfolio inquiry from ' + data.get('name');
-    const body = data.get('message') + '\n\n— ' + data.get('name') + ' (' + data.get('email') + ')';
-    window.location.href = 'mailto:alice.millage@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    note.textContent = 'Opening your email app…';
+    if (!data.get('cf-turnstile-response')) {
+      note.textContent = 'Please complete the verification check above the button.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    note.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', { method: 'POST', body: new URLSearchParams(data) });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.ok !== true) throw new Error(json.error || 'send_failed');
+      form.reset();
+      note.textContent = 'Thanks! Your message is on its way.';
+    } catch (err) {
+      note.textContent = err.message === 'verification_failed'
+        ? 'Verification failed. Please try again.'
+        : 'Sorry, that didn’t send. Please email alice.millage@gmail.com directly.';
+    } finally {
+      submitBtn.disabled = false;
+      // Tokens are single-use: get a fresh one for any further submission.
+      if (turnstileId !== undefined && window.turnstile) window.turnstile.reset(turnstileId);
+    }
   });
 
   $('#year').textContent = new Date().getFullYear();

@@ -230,6 +230,7 @@
           <label>Name <input name="name" autocomplete="name" required></label>
           <label>Email <input name="email" type="email" autocomplete="email" required></label>
           <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <div class="contact-turnstile" id="contact-turnstile"></div>
           <button class="btn btn-primary" type="submit">Send message</button>
           <p class="form-note" id="form-note" role="status"></p>
         </form>
@@ -246,6 +247,7 @@
 
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onContactTurnstileLoad&amp;render=explicit" async defer></script>
   <script>
     // Vercel Web Analytics (cookieless page views). Only on the live domain, where Vercel serves the script.
     if (/(^|\.)alicemillage\.cv$/.test(location.hostname)) {

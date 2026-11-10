@@ -1,9 +1,10 @@
 const P = require('../js/projects.js');
 
 describe('project data', () => {
-  test('showcases the five requested repos', () => {
+  test('showcases the six requested repos', () => {
     expect(P.projects.map((p) => p.repo)).toEqual([
       'literaryworm',
+      'literarywormai',
       'cryptocurrency_portfolio_app',
       'netflix_clone',
       'angularzuleikav1',
@@ -21,6 +22,22 @@ describe('project data', () => {
     });
   });
 
+  test('LiteraryWorm AI is featured and its code is marked private', () => {
+    const ai = P.projects.find((p) => p.repo === 'literarywormai');
+    expect(ai.title).toBe('LiteraryWorm AI');
+    expect(ai.featured).toBe(true);
+    expect(ai.private).toBe(true);
+    expect(ai.live).toBe('https://literarywormai.vercel.app/');
+    expect(P.projects.filter((p) => p.private).map((p) => p.repo)).toEqual(['literarywormai']);
+  });
+
+  test('every project has its own cover colour that the stylesheet defines', () => {
+    const css = require('fs').readFileSync(require('path').join(__dirname, '../css/styles.css'), 'utf8');
+    const covers = P.projects.map((p) => p.cover);
+    expect(new Set(covers).size).toBe(P.projects.length);
+    covers.forEach((c) => expect(css).toContain('.project-cover.c' + c + ' {'));
+  });
+
   test('repoUrl points at the GitHub repo', () => {
     expect(P.repoUrl(P.projects[0])).toBe('https://github.com/ZuleikaRose/literaryworm');
   });
@@ -36,7 +53,7 @@ describe('project data', () => {
 
 describe('filterProjects', () => {
   test('"all" with no query returns everything', () => {
-    expect(P.filterProjects(P.projects, 'all', '')).toHaveLength(5);
+    expect(P.filterProjects(P.projects, 'all', '')).toHaveLength(6);
   });
 
   test('filters by category', () => {
@@ -58,6 +75,6 @@ describe('tagCounts', () => {
   test('orders tags by frequency then name', () => {
     const counts = P.tagCounts(P.projects);
     expect(counts[0].count).toBeGreaterThanOrEqual(counts[1].count);
-    expect(counts.find((t) => t.tag === 'Supabase').count).toBe(3);
+    expect(counts.find((t) => t.tag === 'Supabase').count).toBe(4);
   });
 });
