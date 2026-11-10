@@ -198,6 +198,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .project-cover.c2 { background: linear-gradient(135deg, #2e1065, #7c3aed); }
 .project-cover.c3 { background: linear-gradient(135deg, #232f3e, #ff9900); }
 .project-cover.c4 { background: linear-gradient(135deg, #059669, #0ea5e9); }
+.project-cover.c5 { background: linear-gradient(135deg, #9d174d, #b45309); }
 .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
 .project-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
 .badge { background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 6px; font-weight: 600; }
@@ -211,6 +212,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .live-note { margin: 0 0 10px; font-size: 0.78rem; color: var(--muted); font-style: italic; }
 .project-links { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-weight: 600; font-size: 0.9rem; }
 .link-btn { background: none; border: 0; color: var(--muted); font: inherit; font-weight: 600; cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
+.code-private { color: var(--muted); }
 .repo-stats { margin-left: auto; font-size: 0.78rem; color: var(--muted); font-weight: 500; }
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
 
@@ -259,6 +261,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 }
 .contact-form [aria-invalid='true'] { border-color: #dc2626; }
 .form-note { min-height: 1.4em; margin: 0; font-size: 0.9rem; }
+.contact-turnstile { min-height: 65px; }
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
