@@ -12,6 +12,12 @@ describe('project notes', () => {
   });
 });
 
+describe('index.html stats', () => {
+  test('shows 3 companies founded & running', () => {
+    expect(html).toMatch(/data-count="3">0<\/span><p>companies founded &amp; running<\/p>/);
+  });
+});
+
 describe('index.html metadata', () => {
   test('has a canonical URL and social sharing image', () => {
     expect(html).toContain('<link rel="canonical" href="https://www.alicemillage.cv/">');
