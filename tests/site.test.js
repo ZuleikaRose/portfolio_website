@@ -12,6 +12,13 @@ describe('project notes', () => {
   });
 });
 
+describe('experience timeline', () => {
+  test('shows the first 5 roles before "Show full career history"', () => {
+    expect(read('js/main.js')).toMatch(/const VISIBLE = 5;/);
+    expect(P.experience.length).toBeGreaterThan(5);
+  });
+});
+
 describe('index.html stats', () => {
   test('shows 3 companies founded & running', () => {
     expect(html).toMatch(/data-count="3">0<\/span><p>companies founded &amp; running<\/p>/);
