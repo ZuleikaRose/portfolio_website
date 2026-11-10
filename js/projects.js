@@ -120,6 +120,17 @@
 
   const experience = [
     {
+      org: 'LiteraryWorm AI',
+      role: 'Owner',
+      start: 'Nov 2026',
+      end: 'Present',
+      location: 'Chicago, Illinois',
+      url: 'https://literarywormai.vercel.app/',
+      bullets: [
+        'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.'
+      ]
+    },
+    {
       org: 'LiteraryWorm',
       role: 'Owner',
       start: 'Oct 2026',

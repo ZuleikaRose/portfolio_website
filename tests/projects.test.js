@@ -42,8 +42,20 @@ describe('project data', () => {
     expect(P.repoUrl(P.projects[0])).toBe('https://github.com/ZuleikaRose/literaryworm');
   });
 
-  test('LiteraryWorm is the current role, started October 2026', () => {
-    const lw = P.experience[0];
+  test('LiteraryWorm AI is the newest role, started November 2026', () => {
+    const ai = P.experience[0];
+    expect(ai.org).toBe('LiteraryWorm AI');
+    expect(ai.role).toBe('Owner');
+    expect(ai.start).toBe('Nov 2026');
+    expect(ai.end).toBe('Present');
+    expect(ai.location).toBe('Chicago, Illinois');
+    expect(ai.bullets).toEqual([
+      'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.'
+    ]);
+  });
+
+  test('LiteraryWorm is a current role, started October 2026', () => {
+    const lw = P.experience[1];
     expect(lw.org).toBe('LiteraryWorm');
     expect(lw.role).toBe('Owner');
     expect(lw.start).toBe('Oct 2026');
