@@ -27,7 +27,7 @@ describe('project data', () => {
     expect(ai.title).toBe('LiteraryWorm AI');
     expect(ai.featured).toBe(true);
     expect(ai.private).toBe(true);
-    expect(ai.live).toBe('https://literarywormai.vercel.app/');
+    expect(ai.live).toBe('https://literaryworm.net/');
     expect(P.projects.filter((p) => p.private).map((p) => p.repo)).toEqual(['literarywormai']);
   });
 
@@ -49,6 +49,7 @@ describe('project data', () => {
     expect(ai.start).toBe('Nov 2026');
     expect(ai.end).toBe('Present');
     expect(ai.location).toBe('Chicago, Illinois');
+    expect(ai.url).toBe('https://literaryworm.net/');
     expect(ai.bullets).toEqual([
       'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.'
     ]);

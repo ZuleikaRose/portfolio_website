@@ -75,7 +75,7 @@ describe('education', () => {
   test('the résumé includes the LiteraryWorm AI role and project', () => {
     const resume = read('assets/src/resume.html');
     expect(resume).toContain('Owner of LiteraryWorm, LiteraryWorm AI and Zuleika LLC');
-    expect(resume).toContain('Nov 2026 – Present · Chicago, IL</span></div>\n  <div class="org">LiteraryWorm AI — literarywormai.vercel.app</div>');
+    expect(resume).toContain('Nov 2026 – Present · Chicago, IL</span></div>\n  <div class="org">LiteraryWorm AI — literaryworm.net</div>');
     expect(resume).toContain('Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.');
     expect(resume).toContain('<li><b>LiteraryWorm AI</b> — Supabase, Node, Claude API, OpenAI</li>');
   });
