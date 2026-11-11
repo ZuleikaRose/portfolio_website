@@ -77,7 +77,9 @@ describe('education', () => {
     expect(resume).toContain('Owner of LiteraryWorm, LiteraryWorm AI and Zuleika LLC');
     expect(resume).toContain('Nov 2026 – Present · Chicago, IL</span></div>\n  <div class="org">LiteraryWorm AI — literaryworm.net</div>');
     expect(resume).toContain('Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.');
-    expect(resume).toContain('<li><b>LiteraryWorm AI</b> — Supabase, Node, Claude API, OpenAI</li>');
+    expect(resume).toContain('Built the React and TypeScript app on Supabase and Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.');
+    expect(resume).toContain('Planned the product as 1,034 user stories across 17 build phases, tested with Jest, Playwright and axe in CI.');
+    expect(resume).toContain('<li><b>LiteraryWorm AI</b> — React, TypeScript, Supabase, Stripe, Claude API, OpenAI</li>');
   });
 
   test('the résumé contact line links literaryworm.net', () => {

@@ -27,13 +27,13 @@
       title: 'LiteraryWorm AI',
       tagline: 'An AI publishing dashboard that takes an ebook from idea to a live store listing',
       description:
-        'The plan and early build of the Ebook Command Center: one workspace that takes a book from idea to a published listing on Amazon Kindle (KDP) and Google Play Books, with OpenAI and Claude built in through a single AI gateway with cost estimates, budget caps and fallback between the two. It maps 16 author personas and 1,023 user stories with Given/When/Then acceptance criteria across 17 build phases, and a Node build script generates the outline, traceability and feature index, which Jest tests keep consistent.',
+        'The Ebook Command Center: one workspace that takes a book from idea to a published listing on Amazon Kindle (KDP) and Google Play Books, with ChatGPT and Claude built in. The React and TypeScript app on literaryworm.net has a public homepage and pricing, paid plans through Stripe Checkout and the Customer Portal, an AI assistant that runs both models through one guarded Edge Function (a cost check before each run, fallback, and authors’ own API keys), a chapter editor with autosave and version history, outlining, manuscript import and EPUB 3 export checked by EPUBCheck in CI. The plan behind it maps 16 author personas and 1,034 user stories with Given/When/Then criteria across 17 build phases.',
       highlights: [
-        '1,023 user stories with acceptance criteria',
-        'One AI gateway for OpenAI and Claude',
-        'Generated docs kept consistent by Jest'
+        'ChatGPT and Claude through one guarded Edge Function',
+        'Stripe Checkout and self-service billing',
+        'EPUB 3 export, EPUBCheck and axe audits in CI'
       ],
-      tags: ['Supabase', 'PostgreSQL', 'Node', 'Jest', 'Claude API', 'OpenAI'],
+      tags: ['React', 'TypeScript', 'Supabase', 'Stripe', 'Claude API', 'OpenAI'],
       category: 'fullstack',
       live: 'https://literaryworm.net/',
       private: true,
@@ -127,7 +127,9 @@
       location: 'Chicago, Illinois',
       url: 'https://literaryworm.net/',
       bullets: [
-        'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.'
+        'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.',
+        'Built the React and TypeScript app on Supabase and Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.',
+        'Planned the product as 1,034 user stories across 17 build phases, tested with Jest, Playwright and axe in CI.'
       ]
     },
     {
