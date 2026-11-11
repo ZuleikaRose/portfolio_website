@@ -103,7 +103,10 @@ async function handler(req, res) {
   const { fields, token, valid, isBot } = readFields(req.body);
 
   // Answer like a success so the bot has no signal to adapt to; skip siteverify and email.
-  if (isBot) return send(res, 200, { ok: true });
+  if (isBot) {
+    console.info('contact: honeypot hit, dropped');
+    return send(res, 200, { ok: true });
+  }
 
   if (!(await verifyTurnstile(token, clientIp(req)))) {
     return send(res, 403, { ok: false, error: 'verification_failed' });

@@ -39,6 +39,7 @@ beforeEach(() => {
   delete process.env.CONTACT_FROM;
   global.fetch = jest.fn();
   jest.spyOn(console, 'error').mockImplementation(() => {});
+  jest.spyOn(console, 'info').mockImplementation(() => {});
 });
 afterEach(() => {
   process.env = savedEnv;
@@ -164,6 +165,7 @@ describe('honeypot', () => {
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual({ ok: true });
     expect(fetch).not.toHaveBeenCalled();
+    expect(console.info).toHaveBeenCalledWith('contact: honeypot hit, dropped');
   });
 
   test.each([
@@ -175,5 +177,6 @@ describe('honeypot', () => {
     await handler(req({ ...goodBody, website: value }), res);
     expect(res.statusCode).toBe(200);
     expect(fetch).toHaveBeenCalledTimes(2);
+    expect(console.info).not.toHaveBeenCalled();
   });
 });
