@@ -153,3 +153,27 @@ test('returns 500 when RESEND_API_KEY is missing', async () => {
   await handler(req(goodBody), res);
   expect(res.statusCode).toBe(500);
 });
+
+describe('honeypot', () => {
+  test.each([
+    ['text', 'https://spam.example'],
+    ['a non-string value', ['x']],
+  ])('a filled website field (%s) gets a silent 200 and nothing is verified or sent', async (_label, value) => {
+    const res = mockRes();
+    await handler(req({ ...goodBody, website: value }), res);
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual({ ok: true });
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  test.each([
+    ['empty', ''],
+    ['whitespace only', '   '],
+  ])('an %s website field is treated as a person', async (_label, value) => {
+    fetch.mockResolvedValueOnce(verified()).mockResolvedValueOnce(json(200, {}));
+    const res = mockRes();
+    await handler(req({ ...goodBody, website: value }), res);
+    expect(res.statusCode).toBe(200);
+    expect(fetch).toHaveBeenCalledTimes(2);
+  });
+});

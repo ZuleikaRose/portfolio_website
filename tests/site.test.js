@@ -131,3 +131,22 @@ describe('education', () => {
     expect(resume).not.toContain('120+');
   });
 });
+
+describe('contact form honeypot', () => {
+  const html = read('index.html');
+  const form = html.match(/<form[^>]*id="contact-form"[\s\S]*?<\/form>/)[0];
+
+  test('has a hidden, unfocusable website field outside the tab order', () => {
+    const wrap = form.match(/<div class="contact-hp" aria-hidden="true">[\s\S]*?<\/div>/);
+    expect(wrap).not.toBeNull();
+    expect(wrap[0]).toMatch(/<input name="website"[^>]*tabindex="-1"[^>]*autocomplete="off"/);
+  });
+
+  test('is hidden off-screen by the stylesheet', () => {
+    expect(read('css/styles.css')).toMatch(/\.contact-hp\s*\{[^}]*left:\s*-10000px/);
+  });
+
+  test('is skipped by client-side validation', () => {
+    expect(read('js/main.js')).toContain("f.closest('.contact-hp')");
+  });
+});

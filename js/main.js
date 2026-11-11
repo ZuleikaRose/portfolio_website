@@ -275,7 +275,7 @@
     e.preventDefault();
     let ok = true;
     $$('input, textarea', form).forEach((f) => {
-      if (!f.name || f.name.startsWith('cf-')) return;
+      if (!f.name || f.name.startsWith('cf-') || f.closest('.contact-hp')) return;
       const valid = f.checkValidity() && f.value.trim() !== '';
       f.setAttribute('aria-invalid', String(!valid));
       if (!valid) ok = false;

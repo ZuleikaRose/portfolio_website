@@ -236,6 +236,10 @@
           <label>Name <input name="name" autocomplete="name" required></label>
           <label>Email <input name="email" type="email" autocomplete="email" required></label>
           <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <!-- Honeypot: hidden from people and assistive tech; bots that fill every field get dropped server-side. -->
+          <div class="contact-hp" aria-hidden="true">
+            <label>Leave this field empty <input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          </div>
           <div class="contact-turnstile" id="contact-turnstile"></div>
           <button class="btn btn-primary" type="submit">Send message</button>
           <p class="form-note" id="form-note" role="status"></p>

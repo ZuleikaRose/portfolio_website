@@ -262,6 +262,8 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .contact-form [aria-invalid='true'] { border-color: #dc2626; }
 .form-note { min-height: 1.4em; margin: 0; font-size: 0.9rem; }
 .contact-turnstile { min-height: 65px; }
+/* Honeypot: off-screen rather than display:none, which some bots detect and skip. */
+.contact-hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 0.9rem; }

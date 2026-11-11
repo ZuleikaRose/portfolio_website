@@ -1,8 +1,10 @@
 'use strict';
 
 // Contact form endpoint (Vercel Function, Node runtime).
-// 1. Verifies the Cloudflare Turnstile token with siteverify (fails closed).
-// 2. Emails the message to the site owner through Resend.
+// 1. Drops honeypot hits: the hidden `website` field is empty for people, so a
+//    filled one means a bot. It gets a normal-looking 200 and nothing is sent.
+// 2. Verifies the Cloudflare Turnstile token with siteverify (fails closed).
+// 3. Emails the message to the site owner through Resend.
 //
 // Env vars:
 //   TURNSTILE_SECRET     Turnstile widget secret
@@ -17,6 +19,7 @@ const EXPECTED_ACTION = 'contact';
 const DEFAULT_TO = 'alice.millage@gmail.com';
 const DEFAULT_FROM = 'Portfolio contact form <onboarding@resend.dev>';
 const LIMITS = { name: 200, email: 320, message: 5000 };
+const HONEYPOT_FIELD = 'website';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const send = (res, status, body) => res.status(status).json(body);
@@ -39,7 +42,9 @@ function readFields(body) {
     fields.name && fields.name.length <= LIMITS.name &&
     fields.email.length <= LIMITS.email && EMAIL_RE.test(fields.email) &&
     fields.message && fields.message.length <= LIMITS.message;
-  return { fields, token: b['cf-turnstile-response'], valid: Boolean(valid) };
+  const trap = b[HONEYPOT_FIELD];
+  const isBot = trap !== undefined && trap !== null && String(trap).trim() !== '';
+  return { fields, token: b['cf-turnstile-response'], valid: Boolean(valid), isBot };
 }
 
 async function verifyTurnstile(token, remoteip) {
@@ -95,7 +100,10 @@ async function handler(req, res) {
     return send(res, 405, { ok: false, error: 'method_not_allowed' });
   }
 
-  const { fields, token, valid } = readFields(req.body);
+  const { fields, token, valid, isBot } = readFields(req.body);
+
+  // Answer like a success so the bot has no signal to adapt to; skip siteverify and email.
+  if (isBot) return send(res, 200, { ok: true });
 
   if (!(await verifyTurnstile(token, clientIp(req)))) {
     return send(res, 403, { ok: false, error: 'verification_failed' });
