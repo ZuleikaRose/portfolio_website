@@ -35,7 +35,7 @@
       ],
       tags: ['Supabase', 'PostgreSQL', 'Node', 'Jest', 'Claude API', 'OpenAI'],
       category: 'fullstack',
-      live: 'https://literarywormai.vercel.app/',
+      live: 'https://literaryworm.net/',
       private: true,
       year: 2026,
       featured: true,
@@ -125,7 +125,7 @@
       start: 'Nov 2026',
       end: 'Present',
       location: 'Chicago, Illinois',
-      url: 'https://literarywormai.vercel.app/',
+      url: 'https://literaryworm.net/',
       bullets: [
         'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.'
       ]
