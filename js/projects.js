@@ -33,7 +33,7 @@
         'Stripe Checkout and self-service billing',
         'EPUB 3 export, EPUBCheck and axe audits in CI'
       ],
-      tags: ['React', 'TypeScript', 'Supabase', 'Stripe', 'Claude API', 'OpenAI'],
+      tags: ['React', 'TypeScript', 'Vite', 'Supabase', 'Vercel', 'Stripe', 'Claude API', 'OpenAI'],
       category: 'fullstack',
       live: 'https://literaryworm.net/',
       private: true,
@@ -128,7 +128,7 @@
       url: 'https://literaryworm.net/',
       bullets: [
         'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.',
-        'Built the React and TypeScript app on Supabase and Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.',
+        'Built the app with React, TypeScript and Vite on Supabase, deployed on Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.',
         'Planned the product as 1,034 user stories across 17 build phases, tested with Jest, Playwright and axe in CI.'
       ]
     },

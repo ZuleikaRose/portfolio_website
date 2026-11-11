@@ -28,6 +28,7 @@ describe('project data', () => {
     expect(ai.featured).toBe(true);
     expect(ai.private).toBe(true);
     expect(ai.live).toBe('https://literaryworm.net/');
+    expect(ai.tags).toEqual(expect.arrayContaining(['Vite', 'Vercel']));
     expect(P.projects.filter((p) => p.private).map((p) => p.repo)).toEqual(['literarywormai']);
   });
 
@@ -52,7 +53,7 @@ describe('project data', () => {
     expect(ai.url).toBe('https://literaryworm.net/');
     expect(ai.bullets).toEqual([
       'Founded LiteraryWorm AI, an AI publishing dashboard that takes an ebook from idea to a live store listing.',
-      'Built the React and TypeScript app on Supabase and Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.',
+      'Built the app with React, TypeScript and Vite on Supabase, deployed on Vercel: ChatGPT and Claude through one guarded Edge Function, Stripe billing, a chapter editor, outlining and EPUB 3 export.',
       'Planned the product as 1,034 user stories across 17 build phases, tested with Jest, Playwright and axe in CI.'
     ]);
   });
